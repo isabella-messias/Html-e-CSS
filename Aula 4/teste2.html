@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Doçura Confeitaria</title>
+  <style>
+    /* === PALETA ===
+      Marrom: #5C4033
+      Bege: #F5F5DC
+      Branco: #FFFFFF
+      Preto: #000000
+    */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F5F5DC;
+      color: #2c2c2c;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ==== CONTAINER ==== */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ==== HEADER ==== */
+    header {
+      background-color: #5C4033;
+      padding: 20px 0;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 25px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    header nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    header nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ==== HERO ==== */
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1608219990171-cf2f843661da?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #ffffff;
+      color: #5C4033;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #f0e0c0;
+      transform: scale(1.05);
+    }
+
+    /* ==== SECTIONS ==== */
+    .section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .section:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    .section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #5C4033;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .imagem {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ==== CARDS (SERVIÇOS) ==== */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background-color: #fff8ef;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 300px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #5C4033;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    /* ==== SOCIAL ==== */
+    .social {
+      margin-top: 30px;
+    }
+
+    .btn-social {
+      background-color: #5C4033;
+      color: white;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .btn-social:hover {
+      background-color: #3e2a21;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.9rem;
+    }
+
+    /* ==== RESPONSIVO ==== */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Doçura Confeitaria</h1>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Cardápio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h2>Sabor que Encanta</h2>
+      <p>Doces artesanais feitos com carinho e ingredientes selecionados.</p>
+      <a href="#contato" class="btn">Faça seu pedido</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>Na Doçura Confeitaria, cada doce é feito com amor. Temos paixão por confeitaria artesanal e queremos tornar seus momentos ainda mais especiais com sabores inesquecíveis.</p>
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Doces da confeitaria" class="imagem" />
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="section">
+    <div class="container">
+      <h2>Nosso Cardápio</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Bolos Personalizados</h3>
+          <p>Bolos temáticos e sob medida para cada ocasião especial.</p>
+        </div>
+        <div class="card">
+          <h3>Doces Gourmet</h3>
+          <p>Brigadeiros, trufas e outros sabores irresistíveis para festas.</p>
+        </div>
+        <div class="card">
+          <h3>Encomendas Especiais</h3>
+          <p>Montamos kits personalizados para aniversários e eventos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section">
+    <div class="container">
+      <h2>Fale Conosco</h2>
+      <p>Entre em contato ou faça seu pedido pelas nossas redes sociais:</p>
+      <div class="social">
+        <a href="#" class="btn-social">Instagram</a>
+        <a href="#" class="btn-social
