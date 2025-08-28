@@ -1,0 +1,33 @@
+body {
+      background-color: #f0f8ff; /* Cor de fundo clara (Azul Alice) */
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2e8b57;            /* Verde-mar escuro */
+      text-align: center;
+      font-size: 36px;
+    }
+
+    h2 {
+      color: #8b0000;            /* Vermelho escuro */
+      text-align: left;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .justificado {
+      color: #333366;            /* Azul escuro */
+      text-align: justify;
+    }
+
+    .direita {
+      color: #993399;            /* Roxo escuro */
+      text-align: right;
+      font-size: 22px;
+    }

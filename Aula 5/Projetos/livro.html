@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de aluno</title>
+    <link rel="stylesheet" href="/Aula 5/Projetos/style.css">
+</head>
+<body>
+    <h1> Cadastro de livro(Biblioteca)</h1>
+    <p>bem-vindos ao sistema de cadastro da nossa escola virtual</p>
+    <h3>📋Menu de cadastro</h3>
+    <a href="/Projetos/aluno.html"><button>Cadastro de aluno</button></a>
+    <a href="/Projetos/cursos.html"><button>Cadastro de curso</button></a>
+    <a href="/Projetos/livro.html"><button>Cadastro de livro</button></a>
+    <a href="/Projetos/professor.html"><button>Cadastro de professor</button></a>
+
+    <div class="container"> 
+    
+  <form class="form-livro">
+    <h2>📖Cadastro de Livro (Biblioteca)</h2>
+
+    <label for="titulo">Título do Livro:</label><br>
+    <input type="text"  name="titulo"><br></br>
+
+    <label for="autor">Autor:</label><br>
+    <input type="text"  name="autor"><br></br>
+
+    <label for="ano">Ano de Publicação:</label><br>
+    <input type="number" name="ano"><br></br>
+
+    <label for="editora">Editora:</label><br>
+    <input type="text" name="editora"><br></br>
+
+    <label for="genero">Gênero:</label><br>
+    <select id="genero" name="genero">
+      <option>Selecione o gênero</option>
+      <option>Ficção</option>
+      <option>Biografia</option>
+      <option>História</option>
+      <option>Ciência</option>
+      <option>Didático</option>
+      <option>Infantil</option>
+    </select><br></br>
+
+    <label for="paginas">Número de Páginas:</label><br>
+    <input type="number" name="paginas"><br></br>
+
+    <label for="">Condição</label><br>
+         <input type="radio" name="Novo">Novo<br>
+         <input type="radio" name="Usado-bom estado">Usado-bom estado<br> 
+         <input type="radio" name="Usado-estado Regular">Usado-estado regular<br></br>
+         
+    <label for="localizacao">Localização na Biblioteca:</label></br>
+    <input type="text" id="localizacao" name="localizacao"><br></br>
+
+    
+    <label for="">Características</label><br>
+         <input type="radio" name="Ilustrado">Ilustrado<br>
+         <input type="radio" name="Capa dura">Capa dura<br> 
+         <input type="radio" name="Edição especial">Edição especial<br>
+   
+
+   
+      <button type="submit" class="cadastrar">Cadastrar Livro</button>
+      <button type="reset" class="limpar">Limpar Dados</button> 
+       
+          </div>
+
+    </div>
+  </form>
+</body>
+</html>
+
+    

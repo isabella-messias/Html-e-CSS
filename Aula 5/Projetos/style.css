@@ -1,0 +1,22 @@
+body{
+    background-color: white;
+    font-family: Arial;
+
+}
+.container{
+    background-color: rgb(175, 181, 186);
+    padding: 20px;
+    margin: 20px;
+}
+button{
+    background-color: #c6f300;
+    color: black;
+    padding: 10px;
+    margin:50px;
+    border: none;
+}
+.form{
+    background-color: #a3a4b8;
+    padding: 15px;
+    margin: 10px;
+}
