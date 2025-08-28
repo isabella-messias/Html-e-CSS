@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bloco {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Bloco 1 - Introdução */
+.bloco1 {
+    background-color: #e6f7ff; /* azul clarinho */
+    color: #000;
+}
+
+/* Bloco 2 - Estudos */
+.bloco2 {
+    background-color: #99ccff; /* azul mais forte */
+    color: #fff;
+}
+
+/* Bloco 3 - Meus Sonhos */
+.bloco3 {
+    background-color: #f2e6ff; /* roxo/lilás clarinho */
+    color: #660066;
+}
+/* Bloco 4 - minhas redes*/
+.bloco4 {
+    background-color: #5b3980; /* roxo/lilás clarinho */
+    color: #ffffff;
+}
