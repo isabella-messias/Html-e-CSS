@@ -1,0 +1,215 @@
+
+.lista-compras {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.lista-compras th, .lista-compras td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.cadastro-pessoas {
+    border-collapse: collapse;
+}
+.cadastro-pessoas th {
+    background-color: rgb(135, 135, 135);
+    padding: 5px;
+}
+.cadastro-pessoas td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.agenda-compromissos {
+    border-collapse: collapse;
+    color: blue;
+}
+.agenda-compromissos th, .agenda-compromissos td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.catalogo-produtos {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+.catalogo-produtos th, .catalogo-produtos td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.notas-alunos {
+    border-collapse: collapse;
+}
+.notas-alunos th {
+    font-size: 1.2em;
+    padding: 5px;
+}
+.notas-alunos td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.cardapio-semana {
+    border-collapse: collapse;
+}
+.cardapio-semana th, .cardapio-semana td {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #f6ff77;
+}
+
+.horario-aulas {
+    border-collapse: collapse;
+    text-align: center;
+}
+.horario-aulas th, .horario-aulas td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.resultados-campeonato {
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+.resultados-campeonato th, .resultados-campeonato td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.precos-mercado {
+    border-collapse: collapse;
+}
+.precos-mercado th {
+    color: red;
+}
+.precos-mercado th, .precos-mercado td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.lista-filmes {
+    border-collapse: collapse;
+}
+.lista-filmes th, .lista-filmes td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+.frutas-preferidas {
+    border-collapse: collapse;
+}
+.frutas-preferidas td:first-child {
+    font-style: italic;
+}
+.frutas-preferidas th, .frutas-preferidas td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.tabuada {
+    border-collapse: collapse;
+}
+.tabuada td {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.materias-escolares {
+    border-collapse: collapse;
+}
+.materias-escolares tr:first-child {
+    background-color: #dcdcdc;
+}
+.materias-escolares th, .materias-escolares td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.funcionarios {
+    border-collapse: collapse;
+}
+.funcionarios td {
+    color: green;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.restaurante {
+    border-collapse: collapse;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1em;
+}
+.restaurante th, .restaurante td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.calendario {
+    border-collapse: collapse;
+}
+.calendario tr:nth-child(2) {
+    background-color: #f0f0f0;
+}
+.calendario th, .calendario td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.boletim {
+    border-collapse: collapse;
+}
+.boletim th {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+.boletim td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.paises-capitais {
+    border-collapse: collapse;
+    text-transform: uppercase;
+}
+.paises-capitais th, .paises-capitais td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.catalogo-livros {
+    border-collapse: collapse;
+}
+.catalogo-livros th {
+    font-family: 'Courier New', monospace;
+}
+.catalogo-livros th, .catalogo-livros td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.tabela-final {
+    border-collapse: collapse;
+}
+.tabela-final th {
+    background-color: #ffcc00;
+    color: #003366;
+    font-weight: bold;
+}
+.tabela-final th, .tabela-final td {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #f9f9f9;
+    color: #333333;
+}
