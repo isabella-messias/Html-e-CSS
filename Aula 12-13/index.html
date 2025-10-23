@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Messias dos Santos - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header .subtitulo {
+            font-size: 1.2em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .contatos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .contatos a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .contatos a:hover {
+            background: rgba(52, 152, 219, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .sobre {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .foto {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 5px solid #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* preenche todo o círculo */
+            border-radius: 50%;
+        }
+
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .projeto {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .tag.design {
+            background: #e74c3c;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .sobre {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Isabella Messias dos Santos</h1>
+            <div class="subtitulo">💻 Desenvolvedora | 🎨 Web Designer | 📱 Marketing Digital</div>
+            <div class="contatos">
+                <a href="mailto:isabellamessias779@gmail.com">📧 Email</a>
+                <a href="https://github.com/isabella-messias" target="_blank">💻 GitHub</a>
+                <a href="https://instagram.com/bellasantosx_" target="_blank">📱 Instagram</a>
+                <span style="color: #ecf0f1;">📍 Ferraz de Vasconcelos, SP</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="banner">
+                Seja bem-vindo(a) ao meu portfólio!
+            </div>
+
+            <div class="sobre">
+                <div class="foto"><img src="minha foto.jpg" alt="minha foto"></div>
+                <div>
+                    <h2 style="border: none; margin-top: 0;">Sobre Mim</h2>
+                    <p style="margin-bottom: 15px;">Valorizo o trabalho em equipe, a boa comunicação e a organização,
+                        além de ter comprometimento com cada projeto que assumo. Estou desenvolvendo minhas habilidades
+                        práticas e construindo meu espaço em TI, com foco em desenvolvimento web, design e tecnologias
+                        inovadoras.</p>
+                    <p>Meu objetivo é crescer profissionalmente, conquistar experiência e contribuir de maneira positiva
+                        para empresas que acreditam na inovação e no impacto estratégico da tecnologia.</p>
+                </div>
+            </div>
+
+            <section>
+                <h2>🎓 Educação</h2>
+                <div class="card">
+                    <strong>Curso Profissionalizante em Tecnologia da Informação</strong>
+                    <p>SESI-SENAI | 1º Ano (Em andamento)</p>
+                    <p style="margin-top: 8px; color: #7f8c8d; font-size: 0.9em;">Foco: Programação, Web Design, Redes e
+                        Marketing Digital</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>🛠️ Habilidades</h2>
+                <div class="cards">
+                    <div class="card">
+                        <strong>Programação</strong>
+                        <p>JavaScript, Python</p>
+                    </div>
+                    <div class="card">
+                        <strong>Design</strong>
+                        <p>Web Design, Figma</p>
+                    </div>
+                    <div class="card">
+                        <strong>Marketing Digital</strong>
+                        <p>Redes Sociais, Conteúdo</p>
+                    </div>
+                    <div class="card">
+                        <strong>Soft Skills</strong>
+                        <p>Trabalho em Equipe, Comunicação, Organização</p>
+                    </div>
+                    <div class="card">
+                        <strong>Idiomas</strong>
+                        <p>Português (Nativo)<br>Inglês (B1)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>📚 Projetos</h2>
+                <div class="projeto">
+                    <strong>☕ Website - Grão e Brisa</strong>
+                    <p style="margin: 10px 0;">Projeto de Web Design para cafeteria com foco em experiência do usuário e
+                        estética moderna.</p>
+                    <p style="color: #7f8c8d; font-size: 0.9em;">Ferramenta: Figma</p>
+                    <div class="tags">
+                        <span class="tag design">Web Design</span>
+                        <span class="tag design">Figma</span>
+                        <span class="tag design">UI/UX</span>
+                    </div>
+                </div>
+            </section>
+            <section id="educacao">
+                <h2>🎓 Educação</h2>
+                <div class="card">
+                    <strong>Curso Profissionalizante em Tecnologia da Informação</strong>
+                    <p>SESI-SENAI | 1º Ano (Em andamento)</p>
+                    <p style="margin-top: 8px; color: #7f8c8d; font-size: 0.9em;">
+                        Foco: Programação, Web Design, Redes e Marketing Digital
+                    </p>
+                </div>
+            </section>
+
+            <section id="cursos">
+                <h2>📘 Cursos</h2>
+
+                <div class="cards">
+                    <div class="card">
+                        <strong>Competência Transversal - Segurança no Trabalho</strong>
+                        <p>Período de realização:</p>
+                        <p style="color:#7f8c8d; font-size:0.9em;">
+                            Inicial: 17/03/2025<br>
+                            Final: 15/12/2025
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <strong>Excel Básico</strong>
+                        <p>Período de realização:</p>
+                        <p style="color:#7f8c8d; font-size:0.9em;">
+                            Inicial: 17/03/2025<br>
+                            Final: 15/12/2025
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <strong>Por dentro da Segurança Cibernética</strong>
+                        <p>Período de realização:</p>
+                        <p style="color:#7f8c8d; font-size:0.9em;">
+                            Inicial: 17/03/2025<br>
+                            Final: 15/12/2025
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <strong>Desvendando a Descarbonização</strong>
+                        <p>Período de realização:</p>
+                        <p style="color:#7f8c8d; font-size:0.9em;">
+                            Inicial: 17/03/2025<br>
+                            Final: 15/12/2025
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="habilidades">
+                <h2>🛠️ Habilidades</h2>
+                <div class="cards">
+                    <div class="card">
+                        <strong>Programação</strong>
+                        <p>JavaScript, Python</p>
+                    </div>
+                    <div class="card">
+                        <strong>Design</strong>
+                        <p>Web Design, Figma</p>
+                    </div>
+                    <div class="card">
+                        <strong>Marketing Digital</strong>
+                        <p>Redes Sociais, Conteúdo</p>
+                    </div>
+                    <div class="card">
+                        <strong>Soft Skills</strong>
+                        <p>Trabalho em Equipe, Comunicação, Organização</p>
+                    </div>
+                    <div class="card">
+                        <strong>Idiomas</strong>
+                        <p>Português (Nativo)<br>Inglês (B1)</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <h2>🎯 Objetivos</h2>
+                <div class="card">
+                    <strong>Objetivo Principal</strong>
+                    <p>Conquistar oportunidade de estágio na área de desenvolvimento web, design ou marketing digital,
+                        aprimorando habilidades técnicas e ganhando experiência prática no mercado de TI.</p>
+                </div>
+            </section>
+
+
+            <section>
+                <h2>📞 Contato</h2>
+                <div class="cards">
+                    <div class="card">
+                        <strong>📧 Email</strong>
+                        <p><a href="mailto:isabellamessias779@gmail.com"
+                                style="color: #3498db; text-decoration: none;">isabellamessias779@gmail.com</a></p>
+                    </div>
+                    <div class="card">
+                        <strong>💻 GitHub</strong>
+                        <p><a href="https://github.com/isabella-messias" target="_blank"
+                                style="color: #3498db; text-decoration: none;">github.com/isabella-messias</a></p>
+                    </div>
+                    <div class="card">
+                        <strong>📱 Instagram</strong>
+                        <p><a href="https://instagram.com/bellasantosx_" target="_blank"
+                                style="color: #3498db; text-decoration: none;">@bellasantosx_</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Isabella Messias dos Santos</strong></p>
+            <p>Desenvolvedora | Web Designer | Marketing Digital</p>
+            <p>© 2025 Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+
+</html>
