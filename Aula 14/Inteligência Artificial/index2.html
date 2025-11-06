@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligência Artificial - Guia Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background-color: #ffffff;
+        }
+
+        .top-bar {
+            background-color: #1a202c;
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9em;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 25px;
+        }
+
+        .top-bar-left span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #4299e1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-text h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .header-text p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #101d54;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ai-illustration {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8em;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #2d3748;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 35px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: #071241;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+
+        nav ul li a:hover {
+            background-color: #4a5568;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #1a2c7c 0%, #231b7b 100%);
+            padding: 60px 40px;
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8em;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.2em;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content-text {
+            font-size: 1.1em;
+            color: #4a5568;
+            line-height: 1.9;
+        }
+
+        .content-text p {
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .feature-box h3 {
+            color: #111c4e;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .ai-icon-large {
+            font-size: 15em;
+            text-align: center;
+            opacity: 0.15;
+            background: linear-gradient(135deg, #667eea 0%, #1a0e57 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .video-section {
+            background-color: #1a202c;
+            padding: 100px 0;
+        }
+
+        .video-section .section-header h2,
+        .video-section .section-header p {
+            color: white;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+
+        .video-content {
+            padding: 30px;
+        }
+
+        .video-content h3 {
+            font-size: 1.5em;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .video-content p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .video-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #667eea;
+            font-weight: 600;
+            padding-top: 15px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .app-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #667eea;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .app-card:nth-child(odd) {
+            border-top-color: #764ba2;
+        }
+
+        .app-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .app-card h3 {
+            font-size: 1.4em;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .app-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            color: #cbd5e0;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #4a5568;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        @media (max-width: 1024px) {
+            .header-content,
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-illustration {
+                margin-top: 40px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+                padding-left: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 2.2em;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .top-bar-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <span>📧 contato.ia@exemplo.com.br</span>
+                <span>📞 (11) 98765-4321</span>
+            </div>
+            <div class="social-links">
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Inteligência Artificial</h1>
+                <p>Descubra como a IA está revolucionando o mundo e transformando o futuro da tecnologia em todos os setores da sociedade.</p>
+                <a href="#definicao" class="cta-button">Explorar Agora</a>
+            </div>
+            <div class="header-image">
+                <div class="ai-illustration">🤖</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#definicao">O que é IA?</a></li>
+            <li><a href="#videos">Vídeos</a></li>
+            <li><a href="#aplicacoes">Aplicações</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Empresas usando IA</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$500B</span>
+                <span class="stat-label">Mercado global de IA</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">97M</span>
+                <span class="stat-label">Empregos em IA até 2025</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Aumento de produtividade</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="definicao">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que é Inteligência Artificial?</h2>
+                <p>Entenda os fundamentos desta tecnologia revolucionária</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>
+                        A Inteligência Artificial (IA) é um campo da ciência da computação dedicado à criação de sistemas capazes de realizar tarefas que normalmente requerem inteligência humana. Esses sistemas são projetados para aprender, raciocinar, resolver problemas, compreender linguagem natural e até mesmo perceber o ambiente ao seu redor através de sensores e câmeras.
+                    </p>
+                    <p>
+                        A IA moderna se baseia em algoritmos de aprendizado de máquina (machine learning) e aprendizado profundo (deep learning), que permitem que computadores aprendam com dados sem serem explicitamente programados para cada situação. Essas tecnologias utilizam redes neurais artificiais inspiradas no funcionamento do cérebro humano.
+                    </p>
+                    
+                    <div class="feature-box">
+                        <h3>💡 Principais Características</h3>
+                        <p>A IA moderna processa grandes volumes de informações para identificar padrões e tomar decisões inteligentes, adaptando-se continuamente a novos dados e situações.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="ai-icon-large">🧠</div>
+                    <p style="text-align: center; color: #4a5568; font-size: 1.1em; margin-top: 20px;">
+                        Desde assistentes virtuais até sistemas complexos de diagnóstico médico, a IA está transformando todos os setores da sociedade desde a década de 1950.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vídeos sobre Inteligência Artificial</h2>
+                <p>Aprenda com especialistas através de conteúdos selecionados</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/mJeNghZXtMo" allowfullscreen></iframe>
+                    <div class="video-content">
+                        <h3>O que é Inteligência Artificial?</h3>
+                        <p>
+                            Uma introdução completa ao mundo da IA, explicando seus conceitos fundamentais, aplicações práticas e como essa tecnologia está transformando o mundo ao nosso redor de forma acessível e didática.
+                        </p>
+                        <div class="video-author">
+                            <span>👨‍💻</span>
+                            <span>Canal: Código Fonte TV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/Dk7h22mRYHQ" allowfullscreen></iframe>
+                    <div class="video-content">
+                        <h3>Como Funciona a Inteligência Artificial</h3>
+                        <p>
+                            Descubra os mecanismos por trás da inteligência artificial, incluindo redes neurais, aprendizado de máquina e as técnicas que permitem que máquinas aprendam e tomem decisões de forma autônoma.
+                        </p>
+                        <div class="video-author">
+                            <span>🎓</span>
+                            <span>Canal: TecMundo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="aplicacoes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Aplicações da Inteligência Artificial</h2>
+                <p>Descubra como a IA está presente no nosso dia a dia</p>
+            </div>
+
+            <div class="applications-grid">
+                <div class="app-card">
+                    <span class="app-icon">🗣️</span>
+                    <h3>Assistentes Virtuais</h3>
+                    <p>Alexa, Siri e Google Assistant utilizam IA para compreender comandos de voz e executar tarefas cotidianas como agendar compromissos e responder perguntas.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">🚗</span>
+                    <h3>Carros Autônomos</h3>
+                    <p>Veículos inteligentes que utilizam sensores e IA para navegar de forma independente, identificando obstáculos e tomando decisões de direção em tempo real.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">🎬</span>
+                    <h3>Sistemas de Recomendação</h3>
+                    <p>Netflix, Spotify e YouTube usam algoritmos de IA para analisar seu comportamento e sugerir conteúdos personalizados baseados em suas preferências.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">🏥</span>
+                    <h3>Diagnóstico Médico</h3>
+                    <p>IA auxilia médicos na detecção precoce de doenças através da análise de exames de imagem, aumentando a precisão e agilidade dos diagnósticos.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">🔒</span>
+                    <h3>Reconhecimento Facial</h3>
+                    <p>Tecnologia de segurança que identifica pessoas através de características faciais, utilizada em desbloqueio de dispositivos e sistemas de vigilância.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">💬</span>
+                    <h3>Tradução Automática</h3>
+                    <p>Ferramentas como Google Tradutor utilizam IA para traduzir textos e falas entre diferentes idiomas com alta precisão e naturalidade.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">🏭</span>
+                    <h3>Indústria 4.0</h3>
+                    <p>Automação inteligente de processos produtivos, manutenção preditiva de equipamentos e otimização de cadeias de suprimentos.</p>
+                </div>
+
+                <div class="app-card">
+                    <span class="app-icon">📚</span>
+                    <h3>Educação Personalizada</h3>
+                    <p>Plataformas adaptativas que ajustam o conteúdo educacional ao ritmo e estilo de aprendizagem de cada aluno, maximizando o aproveitamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Projeto</h3>
+                <p>Este site foi desenvolvido como material educacional sobre Inteligência Artificial, explorando seus conceitos, aplicações e impacto na sociedade moderna.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#definicao">O que é IA?</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
+                    <li><a href="#aplicacoes">Aplicações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#">Tutoriais</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><strong>Desenvolvedor:</strong> João Silva Santos</p>
+                <p><strong>Email:</strong> contato.ia@exemplo.com.br</p>
+                <p><strong>Telefone:</strong> (11) 98765-4321</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Inteligência Artificial - Desenvolvido em 06 de Novembro de 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
