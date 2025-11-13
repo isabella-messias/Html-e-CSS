@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;              
+  align-items: center;        
+  justify-content: center;    
+  background: #f3f3f3;
+}
+
+.Conteiner {
+  width: 200px;
+  height: 200px;
+  background: rgb(242, 0, 230);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
